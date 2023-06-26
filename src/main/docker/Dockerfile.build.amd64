@@ -7,10 +7,10 @@ WORKDIR /app/corrigeExamBack
 
 RUN mkdir -p /opt/maven
 WORKDIR /opt/maven
-RUN curl -O "https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz" && tar xzvf "apache-maven-3.6.3-bin.tar.gz" && rm "apache-maven-3.6.3-bin.tar.gz"
+RUN curl -O "https://downloads.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz" && tar xzvf "apache-maven-3.9.2-bin.tar.gz" && rm "apache-maven-3.9.2-bin.tar.gz"
 
 WORKDIR /app/corrigeExamBack
-RUN /opt/maven/apache-maven-3.6.3/bin/mvn package -Pnative
+RUN /opt/maven/apache-maven-3.9.2/bin/mvn package -Pnative
 
 FROM oraclelinux:9-slim as prod
 WORKDIR /work/
